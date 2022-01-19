@@ -1,0 +1,16 @@
+body {
+    font-family: 'Montserrat';
+}
+
+.sidenav.sidebar{
+    background: #1f5316;
+    position: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+}
