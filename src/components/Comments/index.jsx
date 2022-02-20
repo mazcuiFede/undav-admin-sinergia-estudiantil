@@ -15,6 +15,7 @@ const Comments = ({data, idcomentario}) => {
   useEffect(() => {
     userService.getUserData().then(
       response => {
+        debugger
         setUser(response.user)
       }
     )

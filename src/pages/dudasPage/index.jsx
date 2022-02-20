@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Grid, Paper, Avatar, Typography , Box } from '@mui/material'
 import logo from '../../assets/img/logo.png'
-import TablePreguntas from './components/tablePreguntas'
+import TableDudas from './components/tableDudas'
 import { useEffect, useState } from 'react'
 import dudasService from '../../services/dudas.service'
 
-const ForoPage = props => {
+const DudasPage = props => {
 
     const [dudas, setDudas] = useState(null)
 
@@ -22,8 +22,7 @@ const ForoPage = props => {
         )
     }
     
-    const deletePregunta = (id) => {
-        debugger
+    const deleteDuda = (id) => {
         dudasService.deleteDuda(id).then(
             response => {
                 obtenerDudas()
@@ -36,7 +35,7 @@ const ForoPage = props => {
             <Grid item xs={12}>
                 {
                     dudas ? 
-                    <TablePreguntas dudas={dudas.duda} deletePregunta={deletePregunta}/>
+                    <TableDudas dudas={dudas.duda} deleteDuda={deleteDuda}/>
                     :
                     "Cargando..."
                 }
@@ -45,8 +44,8 @@ const ForoPage = props => {
     )
 }
 
-ForoPage.propTypes = {
+DudasPage.propTypes = {
 
 }
 
-export default ForoPage
+export default DudasPage

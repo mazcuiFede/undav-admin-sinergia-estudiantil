@@ -18,6 +18,8 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ReadMoreIcon from '@mui/icons-material/ReadMore';
+import { useNavigate } from "react-router-dom";
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -80,12 +82,12 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-export default function TablePreguntas({dudas, deletePregunta}) {
+export default function TableDudas({dudas, deleteDuda}) {
+  let navigate = useNavigate();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   React.useState(() => {
-    debugger
     console.log(dudas)
   }, [])
 
@@ -133,7 +135,7 @@ export default function TablePreguntas({dudas, deletePregunta}) {
             ? dudas.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : dudas
           ).map((row) => (
-            <TableRow key={row.name}>
+            <TableRow key={row.name} onClick={() => {navigate(`/foro/duda/${row._id}`);}}>
               <TableCell component="th" scope="row">
                 <Avatar alt={row.user.nombre} src={row.user.avatarUrl} />
               </TableCell>
@@ -156,7 +158,8 @@ export default function TablePreguntas({dudas, deletePregunta}) {
                 {row.createdAt}
               </TableCell>
               <TableCell align='center'>
-                <DeleteIcon onClick={() => {deletePregunta(row._id)}}/>
+                <DeleteIcon onClick={() => {deleteDuda(row._id)}} className="pointer"/>
+                <ReadMoreIcon onClick={() => {deleteDuda(row._id)}} className="pointer"/>
               </TableCell>
             </TableRow>
           ))}

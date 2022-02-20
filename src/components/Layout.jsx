@@ -56,12 +56,12 @@ export const Layout = ({children}) => {
                         </NavText>
                     </NavItem>
 
-                    <NavItem eventKey="/foro">
+                    <NavItem eventKey="/dudas">
                         <NavIcon style={{padding: "7px"}}>
                             <ConnectWithoutContactIcon className="fa fa-fw fa-cogs" />  
                         </NavIcon>
-                        <NavText title="foro">
-                            Foro
+                        <NavText title="dudas">
+                            Preguntas
                         </NavText>
                     </NavItem>
                     
@@ -74,12 +74,12 @@ export const Layout = ({children}) => {
                         </NavText>
                     </NavItem>
            
-                    <NavItem eventKey="/solicitudes-admin">
+                    <NavItem eventKey="/usuarios">
                         <NavIcon style={{padding: "7px"}}>
                             <PersonIcon  />
                         </NavIcon>
                         <NavText title="admin">
-                            Solicitudes Admin
+                            Usuarios
                         </NavText>
                     </NavItem>
            

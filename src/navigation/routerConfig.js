@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
-import { ROOT, LOGIN, REGISTRARSE, PRINCIPAL, FORO,
-         EVENTOS, PERFIL, PEDIDOSADMIN  } from './../constants/url'
+import { ROOT, LOGIN, REGISTRARSE, PRINCIPAL, DUDAS,
+         EVENTOS, PERFIL, USUARIOS, FORO_DUDA  } from './../constants/url'
 import { Layout } from '../components/Layout'
 import PrivateRoute from '../components/PrivateRoute';
 
@@ -9,8 +9,9 @@ import RegistrarsePage  from '../pages/registrarsePage'
 import PrincipalPage  from '../pages/principalPage'
 import EventosPage  from '../pages/eventosPage'
 import PerfilPage from '../pages/perfilPage'
-import ForoPage from '../pages/foroPage'
-import AdminPedidosPage from '../pages/adminPedidosPage'
+import DudasPage from '../pages/dudasPage'
+import UsuariosPage from '../pages/usuariosPage';
+import DudaPage from '../pages/dudaPage'
 
 
 export const RouterConfig = () => {
@@ -24,8 +25,9 @@ export const RouterConfig = () => {
             <Route path={PRINCIPAL} element={<PrivateRoute><Layout children={<PrincipalPage />}/></PrivateRoute>} />
             
             <Route path={EVENTOS} element={<PrivateRoute><Layout children={<EventosPage />}/></PrivateRoute>} />
-            <Route path={FORO} element={<PrivateRoute><Layout children={<ForoPage />}/></PrivateRoute>} />
-            <Route path={PEDIDOSADMIN} element={<PrivateRoute><Layout children={<AdminPedidosPage />}/></PrivateRoute>} />
+            <Route path={DUDAS} element={<PrivateRoute><Layout children={<DudasPage />}/></PrivateRoute>} />
+            <Route path={FORO_DUDA} element={<PrivateRoute><Layout children={<DudaPage />}/></PrivateRoute>} />
+            <Route path={USUARIOS} element={<PrivateRoute><Layout children={<UsuariosPage />}/></PrivateRoute>} />
             <Route path={PERFIL} element={<PrivateRoute><Layout children={<PerfilPage />}/></PrivateRoute>} />
             {/* <Route path={SUBIR_CONTENIDO} element={<PrivateRoute><Layout children={<SubirContenidoPage />}/></PrivateRoute>} /> */}
             

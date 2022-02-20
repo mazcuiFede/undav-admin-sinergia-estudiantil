@@ -7,8 +7,23 @@ export const userService = {
   register,
   logout,
   getUserData,
-  getPedidosAdmin
+  getUsuarios,
+  putUserStatus
 };
+
+async function putUserStatus(id, status) {
+  const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'authorization': "bearer " + localStorage.getItem("token") },
+      body: JSON.stringify({status})
+  };
+
+  let url = `${baseUrl}/api/user/${id}`
+  const data = await fetch(url, requestOptions)
+  const result = await data.json();
+
+  return result
+}
 
 async function getUserData(id) {
   const requestOptions = {
@@ -16,20 +31,20 @@ async function getUserData(id) {
       headers: { 'Content-Type': 'application/json', 'authorization': "bearer " + localStorage.getItem("token") }
   };
 
-  let url = `${baseUrl}/api/userdata`
+  let url = `${baseUrl}/api/user`
   const data = await fetch(url, requestOptions)
   const result = await data.json();
 
   return result
 }
 
-async function getPedidosAdmin() {
+async function getUsuarios() {
   const requestOptions = {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', 'authorization': "bearer " + localStorage.getItem("token") }
   };
 
-  let url = `${baseUrl}/api/useradmin`
+  let url = `${baseUrl}/api/users`
   const data = await fetch(url, requestOptions)
   const result = await data.json();
 
@@ -44,7 +59,7 @@ async function login(documento, clave) {
       body: JSON.stringify({documento, password: clave})
   };
 
-  let url = `${baseUrl}/api/login`
+  let url = `${baseUrl}/api/loginadmin`
 
   const data = await fetch(url, requestOptions)
   const result = await data.json();

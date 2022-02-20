@@ -24,7 +24,7 @@ function Item(props) {
     );
   }
 
-const ForoItemsList = ({dudas}) => {
+const PreguntasItemsList = ({dudas}) => {
     let navigate = useNavigate();
     return (
         <Box sx={{ width: '100%', bgcolor: 'background.paper', justifyContent: 'center', display: 'flex'  }}>
@@ -34,7 +34,7 @@ const ForoItemsList = ({dudas}) => {
                         dudas.map(duda => {
                             return <>
                                     <ListItem alignItems={"flex-start"}>
-                                        <ListItemButton onClick={() => {navigate(`/foro/duda/${duda._id}`);}}>
+                                        <ListItemButton onClick={() => {navigate(`/preguntas/duda/${duda._id}`);}}>
                                             <Stack spacing={2} direction="row">
                                                 <Item><Button variant="outlined">{duda.puntos} puntos</Button></Item>
                                                 <Item><Button variant="outlined">{duda.comentarios.length} comentarios</Button></Item>
@@ -60,8 +60,8 @@ const ForoItemsList = ({dudas}) => {
     )
 }
 
-ForoItemsList.propTypes = {
+PreguntasItemsList.propTypes = {
 
 }
 
-export default ForoItemsList
+export default PreguntasItemsList

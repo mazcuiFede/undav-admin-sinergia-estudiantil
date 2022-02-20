@@ -10,36 +10,36 @@ const AdminPedidosPage = props => {
 
     const [pedidos, setPedidos] = useState(null)
 
-    useEffect( () => {
-        obtenerPedidos()
-    }, [])
+    // useEffect( () => {
+    //     obtenerPedidos()
+    // }, [])
 
-    const obtenerPedidos = () => {
-        dudasService.getDudas().then(
-            response => {
-                setDudas(response)
-            }
-        )
-    }
+    // const obtenerPedidos = () => {
+    //     dudasService.getDudas().then(
+    //         response => {
+    //             setDudas(response)
+    //         }
+    //     )
+    // }
     
-    const deletePedido = (id) => {
-        debugger
-        dudasService.deleteDuda(id).then(
-            response => {
-                obtenerDudas()
-            }
-        )
-    }
+    // const deletePedido = (id) => {
+    //     debugger
+    //     dudasService.deleteDuda(id).then(
+    //         response => {
+    //             obtenerDudas()
+    //         }
+    //     )
+    // }
 
     return (
         <Grid container>
             <Grid item xs={12}>
-                {
+                {/* {
                     dudas ? 
                     <TablePedidos dudas={dudas.duda} deletePedido={deletePedido}/>
                     :
                     "Cargando..."
-                }
+                } */}
             </Grid>
         </Grid>
     )
