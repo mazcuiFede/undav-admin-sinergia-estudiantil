@@ -36,6 +36,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "react-user-profile": "^1.0.3",
+    "serve": "^13.0.2",
     "simple-react-comments": "^1.1.0",
     "styled-components": "^5.3.3",
     "typeface-roboto": "^1.1.13",
@@ -43,7 +44,7 @@
   },
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build"
   },
   "eslintConfig": {
@@ -63,6 +64,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }
