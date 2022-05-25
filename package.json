@@ -27,6 +27,7 @@
     "ensure-array": "^1.0.0",
     "final-form": "^4.20.6",
     "fontsource-roboto": "^4.0.0",
+    "moment": "^2.29.3",
     "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-comments-section": "^1.0.7",
@@ -43,7 +44,7 @@
   },
   "scripts": {
     "dev": "react-scripts start",
-    "start": "react-scripts start",
+    "start": "react-scripts start --optimize_for_size --max_old_space_size=460",
     "build": "react-scripts build"
   },
   "eslintConfig": {
