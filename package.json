@@ -34,6 +34,8 @@
     "react-final-form": "^6.5.7",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
+    "react-uuid": "^1.0.2",
+    "reactjs-popup": "^2.0.5",
     "react-user-profile": "^1.0.3",
     "serve": "^14.0.0",
     "simple-react-comments": "^1.1.0",
